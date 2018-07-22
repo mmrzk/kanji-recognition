@@ -2,9 +2,9 @@
 
 This project is made with Angular 6 and uses Google Translate service to recognize handwritten Japanese kanji.
 
-#Usage
+## Usage
 
-1.  Import the module and add it to the imports section.
+### 1. Import the module and add it to the imports section.
 
 ```
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,7 +26,7 @@ import { AppComponent } from './app.component';
 export class AppModule {}
 ```
 
-2.  Use the component in your app like this.
+### 2. Use the component in your app like this.
 
 ```
 <kanji-recognition #kr [width]="400" [height]="250" (done)="suggestions = $event">
@@ -38,16 +38,19 @@ export class AppModule {}
 </ul>
 ```
 
-#Inputs
+## Inputs
+
 `width` - width of the canvas  
 `height` - height of the canvas  
 `lineWidth` - width of the line  
-`maxResults` - maximum number of results sent from Google service  
+`maxResults` - maximum number of results sent from Google service
 
-#Outputs
+## Outputs
+
 `done` - emits results of a recognition in form of an array of strings
 `httpError` - emits a http error if there was some problem with connection
 `apiError` - emits an error if there was problem on the Google side
 
-#Public methods
+# Public methods
+
 `clear(void): void` - clears the canvas
