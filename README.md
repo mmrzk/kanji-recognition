@@ -51,6 +51,6 @@ export class AppModule {}
 `httpError` - emits a http error if there was some problem with connection
 `apiError` - emits an error if there was problem on the Google side
 
-# Public methods
+## Public methods
 
 `clear(void): void` - clears the canvas
