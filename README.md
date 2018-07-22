@@ -40,17 +40,18 @@ export class AppModule {}
 
 ## Inputs
 
-`width` - width of the canvas  
-`height` - height of the canvas  
-`lineWidth` - width of the line  
-`maxResults` - maximum number of results sent from Google service
+**`width`** - width of the canvas  
+**`height`** - height of the canvas  
+**`lineWidth`** - width of the line  
+**`color`** - color of the stroke  
+**`maxResults`** - maximum number of results sent from Google service
 
 ## Outputs
 
-`done` - emits results of a recognition in form of an array of strings
-`httpError` - emits a http error if there was some problem with connection
-`apiError` - emits an error if there was problem on the Google side
+**`done`** - emits results of a recognition in form of an array of strings  
+**`httpError`** - emits a http error if there was some problem with connection  
+**`apiError`** - emits an error if there was problem on the Google side
 
 ## Public methods
 
-`clear(void): void` - clears the canvas
+**`clear(void): void`** - clears the canvas
