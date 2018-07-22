@@ -1,0 +1,7 @@
+<p *ngIf="show">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae itaque quaerat corrupti molestiae ab ea enim reprehenderit
+  facere, iure dolore dignissimos similique at deleniti minus earum, hic, ipsam adipisci quisquam!</p>
+<lib-kanji-recognition #kr color='fuchsia' [lineWidth]="7" [width]="300" [height]="150" (done)="suggestions = $event"></lib-kanji-recognition>
+<button (click)="kr.clear()">Clear</button>
+<ul>
+  <li *ngFor="let kanji of suggestions">{{kanji}}</li>
+</ul>
