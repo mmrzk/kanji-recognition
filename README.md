@@ -29,9 +29,9 @@ export class AppModule {}
 ### 2. Use the component in your app like this.
 
 ```
-<kanji-recognition #kr [width]="400" [height]="250" (done)="suggestions = $event">
+<lib-kanji-recognition #kr [width]="400" [height]="250" (done)="suggestions = $event">
   Canvas isn't supported in this browser
-</kanji-recognition>
+</lib-kanji-recognition>
 <button (click)="kr.clear()">Clear</button>
 <ul>
   <li *ngFor="let kanji of suggestions">{{kanji}}</li>

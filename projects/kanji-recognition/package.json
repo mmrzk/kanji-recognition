@@ -1,6 +1,25 @@
 {
   "name": "kanji-recognition",
   "version": "1.0.0",
+  "description": "Angular 6 library that uses Google service to recognize handwritten kanji",
+  "author": {
+    "name": "Mykola Moroziuk",
+    "email": "mykola.moroziuk@gmail.com"
+  },
+  "keywords": [
+    "kanji",
+    "recognition",
+    "handwriting"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmrzk/kanji-recognition.git"
+  },
+  "homepage": "https://github.com/mmrzk/kanji-recognition",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmrzk/kanji-recognition/issues"
+  },
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
