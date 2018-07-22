@@ -1,27 +1,53 @@
-# KanjiRecognitionApp
+# KanjiRecognition
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+This project is made with Angular 6 and uses Google Translate service to recognize handwritten Japanese kanji.
 
-## Development server
+#Usage
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1.  Import the module and add it to the imports section.
 
-## Code scaffolding
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { KanjiRecognitionModule } from 'kanji-recognition';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+import { AppComponent } from './app.component';
 
-## Build
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    KanjiRecognitionModule
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2.  Use the component in your app like this.
 
-## Running unit tests
+```
+<kanji-recognition #kr [width]="400" [height]="250" (done)="suggestions = $event">
+  Canvas isn't supported in this browser
+</kanji-recognition>
+<button (click)="kr.clear()">Clear</button>
+<ul>
+  <li *ngFor="let kanji of suggestions">{{kanji}}</li>
+</ul>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#Inputs
+`width` - width of the canvas  
+`height` - height of the canvas  
+`lineWidth` - width of the line  
+`maxResults` - maximum number of results sent from Google service  
 
-## Running end-to-end tests
+#Outputs
+`done` - emits results of a recognition in form of an array of strings
+`httpError` - emits a http error if there was some problem with connection
+`apiError` - emits an error if there was problem on the Google side
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#Public methods
+`clear(void): void` - clears the canvas
